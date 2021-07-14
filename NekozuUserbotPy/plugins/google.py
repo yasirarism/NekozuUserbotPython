@@ -2,6 +2,7 @@
 
 from search_engine_parser.core.engines.google import Search as GoogleSearch
 from pyrogram.types import Message
+from pyrogram import filters
 from NekozuUserbotPy import xo, PREFIX
 
 @xo.on_message(filters.command("google", PREFIX) & filters.me)
