@@ -1,4 +1,4 @@
-from pyrogram import Client
+from pyrogram import idle, Client
 from NekozuUserbotPy import xo
 from NekozuUserbotPy.plugins import (
     atmim,
@@ -7,4 +7,5 @@ from NekozuUserbotPy.plugins import (
 )
 
 
-xo.start()
+app.start()
+idle()
