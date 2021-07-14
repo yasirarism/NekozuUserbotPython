@@ -17,6 +17,6 @@ Soon 🗿
 
 [Userge](https://github.com/usergeteam/userge)
 
-['Pyrogram'](https://github.com/pyrogram)
+[`Pyrogram`](https://github.com/pyrogram)
 
 [MySelf](https://t.me/kurayana)
