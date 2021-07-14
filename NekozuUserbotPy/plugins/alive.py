@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 from pyrogram import filters
 from pyrogram.types import Message
-from NekozuUserbotPy import xo, ALIVE_IMG, PREFIX
+from NekozuUserbotPy import xo, ALIVE_IMG, PREFIX, StartTime
 from sys import version_info
 
 from pyrogram import __version__ as __pyro_version__  # noqa
