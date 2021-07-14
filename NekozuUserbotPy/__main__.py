@@ -4,6 +4,7 @@ from NekozuUserbotPy.plugins import (
     atmim,
     alive,
     help,
+    google,
 )
 
 
