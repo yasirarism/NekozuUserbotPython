@@ -7,5 +7,5 @@ from NekozuUserbotPy.plugins import (
 )
 
 
-app.start()
+xo.start()
 idle()
