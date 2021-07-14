@@ -11,3 +11,12 @@ Based On [`Pyrogram`](https://github.com/pyrogram)
 # Heroku
 
 Soon 🗿
+
+## Credits
+[Friday Userbot](https://github.com/DevsExpo/FridayUserbot)
+
+[Userge](https://github.com/usergeteam/userge)
+
+['Pyrogram'](https://github.com/pyrogram)
+
+[MySelf](https://t.me/kurayana)
