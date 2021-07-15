@@ -22,10 +22,6 @@
     "alive_img": {
       "description": "Foto untuk command alive.",
       "required": true
-    },
-    "prefix": {
-      "description": "Prefix Contoh .",
-      "required": true
     }
   },
   "buildpacks": [
