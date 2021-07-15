@@ -12,10 +12,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 StartTime = time.time()
 
-api_id = config("api id", default=None, cast=int)
-api_hash = config("api hash", default=None)
+api_id = config("api_id", default=None, cast=int)
+api_hash = config("api_hash", default=None)
 session = config("session", default=None)
-PREFIX = config("Prefix", default=None)
-ALIVE_IMG = config("alive", default=None)
+PREFIX = config("PREFIX", default=None)
+ALIVE_IMG = config("ALIVE_IMG", default=None)
 
 xo = Client(session, api_id=api_id, api_hash=api_hash)
