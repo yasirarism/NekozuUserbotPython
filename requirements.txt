@@ -4,3 +4,4 @@ bs4
 aiohttp
 fake-useragent
 python-decouple
+search_engine_parser
