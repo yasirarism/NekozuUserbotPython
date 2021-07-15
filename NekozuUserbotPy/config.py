@@ -6,3 +6,6 @@ class Config:
     session = os.environ.get("STRING_SESSION", None)
     prefix = os.environ.get(".", None)
     alive_img = os.environ.get("alive img", None)
+
+class Development(Config):
+    LOGGER = True
