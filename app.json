@@ -1,0 +1,38 @@
+ {
+"name": "NekozuUserbotPython",
+  "description": "Telegram userbot dibuat dengan python menggunakan library pyrogram",
+  "keywords": [
+    "telegram",
+    "userbot"
+  ],
+  "repository": "https://github.com/nekozu/nekozuuserbotpython",
+  "env": {
+    "api_id": {
+      "description": "Dapatkan dari my.telegram.org.",
+      "required": true
+    },
+    "api_hash": {
+      "description": "Dapatkan dari my.telegram.org.",
+      "required": true
+    },
+    "session": {
+      "description": "Dapatkan dari https://replit.com/@NekozuU/NekozuPyroSession#main.py.",
+      "required": true
+    },
+    "alive_img": {
+      "description": "Foto untuk command alive.",
+      "required": true
+    },
+    "prefix": {
+      "description": "Prefix Contoh .",
+      "required": true
+      "value": "."
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "stack": "heroku-20"
+}
