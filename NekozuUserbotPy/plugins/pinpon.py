@@ -7,15 +7,15 @@ from pyrogram.types import Message
 from NekozuUserbotPy import xo, PREFIX
 
 
-@app.on_message(filters.command("pin", PREFIX) & filters.me)
+@xo.on_message(filters.command("pin", PREFIX) & filters.me)
 async def pin_message(_, message: Message):
     if message.chat.type in ["group", "supergroup"]:
         # Here lies the sanity checks
-        admins = await app.get_chat_members(
+        admins = await xo.get_chat_members(
             message.chat.id, filter=ChatMemberFilters.ADMINISTRATORS
         )
         admin_ids = [user.user.id for user in admins]
-        me = await app.get_me()
+        me = await xo.get_me()
 
         # If you are an admin
         if me.id in admin_ids:
@@ -31,7 +31,7 @@ async def pin_message(_, message: Message):
                 ]:
                     disable_notification = False
 
-                await app.pin_chat_message(
+                await xo.pin_chat_message(
                     message.chat.id,
                     message.reply_to_message.message_id,
                     disable_notification=disable_notification,
