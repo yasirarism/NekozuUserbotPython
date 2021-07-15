@@ -7,6 +7,7 @@ from NekozuUserbotPy.plugins import (
     google,
     spam,
     tr,
+    pinpon,
 )
 
 
