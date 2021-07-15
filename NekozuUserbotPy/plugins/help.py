@@ -6,7 +6,8 @@ from NekozuUserbotPy import xo, PREFIX
 mainhelptext = f"""
 You UserBot Is Already Here
 Ini Adalah Bantuan
-  (prefix)adminhelp -> tunjukkan bantuan untuk hal-hal admin.
+  .adminhelp -> tunjukkan bantuan untuk hal-hal admin.
+  .mischelp -> menu random
 """
 
 
@@ -17,16 +18,29 @@ def mainhelp(_, m):
 
 adminhelptext = f"""
 Admin Menu
-  (prefix)ban -> Blokir pengguna tanpa batas waktu.
-  (prefix)unban -> Batalkan pemblokiran pengguna.
-  (prefix)mute -> Membisukan pengguna tanpa batas.
-  (prefix)unmute -> Suarakan pengguna.
-  (prefix)kick -> Mengeluarkan pengguna dari grup.
-  (prefix)pin -> menyematkan pesan.
-  (prefix)del -> hapus pesan.
-  (prefix)purge -> bersihkan pesan
+  .ban -> Blokir pengguna tanpa batas waktu.
+  .unban -> Batalkan pemblokiran pengguna.
+  .mute -> Membisukan pengguna tanpa batas.
+  .unmute -> Suarakan pengguna.
+  .kick -> Mengeluarkan pengguna dari grup.
+  .pin -> menyematkan pesan.
+  .del -> hapus pesan.
+  .purge -> bersihkan pesan
 """
 
 @xo.on_message(filters.command("adminhelp", PREFIX) & filters.me)
 def mainhelp(_, m):
     m.edit(adminhelptext)
+
+misc = f"""
+Misc Menu
+  .google -> Mencari Jawaban Digoofle.
+  .paste -> Mengcopy pesan ke nekobin.
+  .tr (bahasa) -> translate bahasa.
+  .ping cek kecepatan bot
+"""
+
+@xo.on_message(filters.command("mischelp", PREFIX) & filters.me)
+def mainhelp(_, m):
+    m.edit(misc)
+
