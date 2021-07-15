@@ -6,6 +6,7 @@ from NekozuUserbotPy.plugins import (
     help,
     google,
     spam,
+    tr,
 )
 
 
