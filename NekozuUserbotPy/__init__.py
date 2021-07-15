@@ -10,9 +10,7 @@ logging.basicConfig(
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-if bool(os.environ.get("ENV", False)):
-    from NekozuUserbotPy.sample_config import Config
-else:
+if bool(os.environ.get("ENV", True)):
     from NekozuUserbotPy.config import Config
 
 StartTime = time.time()
