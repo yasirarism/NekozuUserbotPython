@@ -3,7 +3,7 @@ from pyrogram.errors import FloodWait
 from NekozuUserbotPy import xo, PREFIX
 import asyncio
 
-@xo.on_message(filters.command("alive", PREFIX) & filters.me)
+@xo.on_message(filters.command("spam", PREFIX) & filters.me)
 async def spam(Client, message):
     x = message.text
     y = x.split(" ")
