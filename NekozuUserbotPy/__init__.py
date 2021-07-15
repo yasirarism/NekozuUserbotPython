@@ -17,10 +17,10 @@ else:
 
 StartTime = time.time()
 
-API_ID = Config.api_id
-API_HASH = Config.api_hash
-SESSION = Config.session
+api_id = Config.api_id
+api_hash = Config.api_hash
+session = Config.session
 PREFIX = Config.prefix
 ALIVE_IMG = Config.alive_img
 
-xo = Client(SESSION, api_id=API_ID, api_hash=API_HASH)
+xo = Client(session, api_id=api_id, api_hash=api_hash)
