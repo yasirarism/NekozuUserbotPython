@@ -4,5 +4,4 @@ bs4
 aiohttp
 fake-useragent
 python-decouple
-inspect
 google_trans_new
