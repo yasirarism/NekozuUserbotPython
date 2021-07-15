@@ -10,17 +10,12 @@ logging.basicConfig(
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-if bool(os.environ.get("ENV", False)):
-    from NekozuUserbotPy.sample_config import Config
-else:
-    from NekozuUserbotPy.config import Development as Config
-
 StartTime = time.time()
 
 api_id = config("api id", default=None, cast=int)
 api_hash = config("api hash", default=None)
 session = config("session", default=None)
-PREFIX = Config.prefix
-ALIVE_IMG = Config.alive_img
+PREFIX = config("Prefix", default=None)
+ALIVE_IMG = config("alive", default=None)
 
 xo = Client(session, api_id=api_id, api_hash=api_hash)
