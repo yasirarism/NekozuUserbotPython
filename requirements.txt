@@ -3,3 +3,4 @@ requests
 bs4
 aiohttp
 fake-useragent
+python-decouple
