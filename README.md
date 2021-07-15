@@ -10,7 +10,7 @@ Based On [`Pyrogram`](https://github.com/pyrogram)
 
 # Heroku
 
-Soon 🗿
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Nekozu/NekozuUserbotPython.git)
 
 ## Credits
 [Friday Userbot](https://github.com/DevsExpo/FridayUserbot)
