@@ -3,7 +3,7 @@ import sys
 import time
 from pyrogram import Client, errors
 import logging
-import os
+from decouple import config
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -17,9 +17,9 @@ else:
 
 StartTime = time.time()
 
-api_id = Config.api_id
-api_hash = Config.api_hash
-session = Config.session
+api_id = config("api id", default=None, cast=int)
+api_hash = config("api hash", default=None)
+session = config("session", default=None)
 PREFIX = Config.prefix
 ALIVE_IMG = Config.alive_img
 
