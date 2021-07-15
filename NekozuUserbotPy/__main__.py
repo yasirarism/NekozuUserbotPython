@@ -5,6 +5,7 @@ from NekozuUserbotPy.plugins import (
     alive,
     help,
     google,
+    spam,
 )
 
 
