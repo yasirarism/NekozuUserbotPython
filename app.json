@@ -26,7 +26,6 @@
     "prefix": {
       "description": "Prefix Contoh .",
       "required": true
-      "value": "."
     }
   },
   "buildpacks": [
