@@ -9,7 +9,7 @@ from NekozuUserbotPy.plugins import (
     tr,
     pinpon,
     resi,
-    paste,
+    nekobin,
 )
 
 
