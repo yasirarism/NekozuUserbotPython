@@ -1,7 +1,7 @@
 from googletrans import Translator
 from pyrogram import filters
 
-from nana import xo, PREFIX
+from NekozuUserbotPy import xo, PREFIX
 
 trl = Translator()
 
