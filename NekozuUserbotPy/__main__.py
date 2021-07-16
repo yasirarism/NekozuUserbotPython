@@ -8,6 +8,7 @@ from NekozuUserbotPy.plugins import (
     spam,
     tr,
     pinpon,
+    resi,
 )
 
 
