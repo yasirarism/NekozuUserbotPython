@@ -11,6 +11,7 @@ from NekozuUserbotPy.plugins import (
     resi,
     nekobin,
     brainly,
+    fun,
 )
 
 
