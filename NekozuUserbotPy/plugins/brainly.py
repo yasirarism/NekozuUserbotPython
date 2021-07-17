@@ -22,7 +22,6 @@ async def brainly(_, message: Message):
     query = get_text(message)
     url = "https://pencarikode.xyz/api/brainly?search="+query+"&apikey=APIKEY"
     hasil = ses.get(url).json()
-    if hasil['owner'] == Pais:
-        brainly = hasil['data']['pertanyaan']
-        beh = hasil['data']['jawaban']
-        await message.edit("*Soal**\n`"+brainly+"`\n\n**Jawaban:**\n"+beh)
+    brainly = hasil['data']['pertanyaan']
+    beh = hasil['data']['jawaban']
+    await message.edit("*Soal**\n`"+brainly+"`\n\n**Jawaban:**\n"+beh)
