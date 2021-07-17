@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from NekozuUserbotPy import xo, PREFIX
 
 
-@xo.on_message(filters.command("br", PREFIX) & filters.me)
+@xo.on_message(filters.command("meme", PREFIX) & filters.me)
 async def meme(_, message: Message):
     meme = r.get("https://meme-api.herokuapp.com/gimme/Animemes/").json()
     image = meme.get("url")
