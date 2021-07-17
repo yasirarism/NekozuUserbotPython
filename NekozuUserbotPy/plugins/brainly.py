@@ -20,7 +20,7 @@ def get_text(message: Message) -> [None, str]:
 @xo.on_message(filters.command("br", PREFIX) & filters.me)
 async def brainly(_, message: Message):
     query = get_text(message)
-     url = "https://pencarikode.xyz/api/brainly?search="+query+"&apikey=APIKEY"
+    url = "https://pencarikode.xyz/api/brainly?search="+query+"&apikey=APIKEY"
         hasil = ses.get(url).json()
         if hasil['status'] == 200:
             brainly = hasil['data']['pertanyaan']
