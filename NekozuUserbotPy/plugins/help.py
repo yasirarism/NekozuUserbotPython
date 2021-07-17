@@ -34,11 +34,11 @@ def mainhelp(_, m):
 
 misc = f"""
 Misc Menu
-  .google -> Mencari Jawaban Digoofle.
+  .google -> Mencari Jawaban Digoogle.
   .paste -> Mengcopy pesan ke nekobin.
   .tr (bahasa) -> translate bahasa.
   .ping cek kecepatan bot
-  .br -> mencari jawban dibrainly
+  .br -> mencari jawaban dibrainly
   .meme -> random animeme
 """
 
