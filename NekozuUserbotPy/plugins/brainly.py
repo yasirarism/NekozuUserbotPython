@@ -1,7 +1,7 @@
 import requests
 from pyrogram import filters
 from pyrogram.types import Message
-from NekozuUserbotPy import xo, PREFIX
+from NekozuUserbotPy import xo, PREFIX, XTEAM_API
 
 ses = requests.session()
 
@@ -20,7 +20,7 @@ def get_text(message: Message) -> [None, str]:
 @xo.on_message(filters.command("br", PREFIX) & filters.me)
 async def brainly(_, message: Message):
     query = get_text(message)
-    url = "https://api.xteam.xyz/brainly?soal="+query+"&APIKEY=c96ddf2a8efbc87d"
+    url = "https://api.xteam.xyz/brainly?soal="+query+"&APIKEY="+XTEAM_API
     hasil = ses.get(url).json()
     brainly = hasil['soal']
     beh = hasil['jawaban']
