@@ -10,6 +10,7 @@ from NekozuUserbotPy.plugins import (
     pinpon,
     resi,
     nekobin,
+    brainly,
 )
 
 
