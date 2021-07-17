@@ -17,5 +17,6 @@ api_hash = config("api_hash", default=None)
 session = config("session", default=None)
 PREFIX = config("PREFIX", default=None)
 ALIVE_IMG = config("ALIVE_IMG", default=None)
+XTEAM_API = config("XTEAM_API", default=None)
 
 xo = Client(session, api_id=api_id, api_hash=api_hash)
