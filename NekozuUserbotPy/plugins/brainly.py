@@ -22,7 +22,6 @@ async def brainly(_, message: Message):
     query = get_text(message)
     url = "https://api.xteam.xyz/brainly?soal="+query+"&APIKEY=c96ddf2a8efbc87d"
     hasil = ses.get(url).json()
-    if hasil['status'] == 200:
-        brainly = hasil['soal']
-        beh = hasil['jawaban']
-        await message.edit("*Soal**\n`"+brainly+"`\n\n**Jawaban:**\n"+beh)
+    brainly = hasil['soal']
+    beh = hasil['jawaban']
+    await message.edit("*Soal**\n`"+brainly+"`\n\n**Jawaban:**\n"+beh)
