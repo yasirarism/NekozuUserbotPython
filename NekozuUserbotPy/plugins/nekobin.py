@@ -1,95 +1,62 @@
-import asyncio
-import aiohttp
-import json
 import os
-from urllib.parse import urlparse
-from pyrogram import Client, filters
-from NekozuUserbotPy import xo, PREFIX
 
-TMP_DOWNLOAD_DIRECTORY = "./NekozuUserbotPy/"
+import aiohttp
+from aiohttp import ClientResponseError, ServerTimeoutError, TooManyRedirects
+from pyrogram import filters
+from pyrogram.types import Message
+from NekozuUserbotPy import PREFIX, xo
+
+DOGBIN_URL = "https://del.dog/"
+NEKOBIN_URL = "https://nekobin.com/"
+DOWN_PATH = "./NekozuUserbotPy/"
 
 @xo.on_message(filters.command("paste", PREFIX) & filters.me)
-async def pastebin(_, message):
-    await message.edit("...")
-    downloaded_file_name = None
-
-    if message.reply_to_message and message.reply_to_message.media:
-        downloaded_file_name_res = await message.reply_to_message.download(
-            file_name=TMP_DOWNLOAD_DIRECTORY
-        )
-        m_list = None
-        with open(downloaded_file_name_res, "rb") as fd:
-            m_list = fd.readlines()
-        downloaded_file_name = ""
-        for m in m_list:
-            downloaded_file_name += m.decode("UTF-8")
-        os.remove(downloaded_file_name_res)
-    elif message.reply_to_message:
-        downloaded_file_name = message.reply_to_message.text.html
-    # elif len(message.command) > 1:
-    #     downloaded_file_name = " ".join(message.command[1:])
-    else:
-        await message.edit("Not said What to do")
+async def paste_(message: Message) -> None:
+    await message.edit("`sabar...`")
+    text = message.filtered_input_str
+    replied = message.reply_to_message
+    use_neko = False
+    file_ext = '.txt'
+    if not text and replied and replied.document and replied.document.file_size < 2 ** 20 * 10:
+        file_ext = os.path.splitext(replied.document.file_name)[1]
+        path = await replied.download(DOWN_PATH)
+        with open(path, 'r') as d_f:
+            text = d_f.read()
+        os.remove(path)
+    elif not text and replied and replied.text:
+        text = replied.text
+    if not text:
+        await message.err("input tidak ditemukan!")
         return
-
-    if downloaded_file_name is None:
-        await message.edit("Didn't say what to do")
-        return
-
-    json_paste_data = {
-        "content": downloaded_file_name
-    }
-
-    # a dictionary to store different pastebin URIs
-    paste_bin_store_s = {
-        "deldog": "https://del.dog/documents",
-        "nekobin": "https://nekobin.com/api/documents"
-    }
-
-    chosen_store = "nekobin"
-    if len(message.command) == 2:
-        chosen_store = message.command[1]
-
-    # get the required pastebin URI
-    paste_store_url = paste_bin_store_s.get(
-        chosen_store,
-        paste_bin_store_s["nekobin"]
-    )
-    paste_store_base_url_rp = urlparse(paste_store_url)
-
-    # the pastebin sites, respond with only the "key"
-    # we need to prepend the BASE_URL of the appropriate site
-    paste_store_base_url = paste_store_base_url_rp.scheme + "://" + \
-        paste_store_base_url_rp.netloc
-
-    async with aiohttp.ClientSession() as session:
-        response_d = await session.post(paste_store_url, json=json_paste_data)
-        response_jn = await response_d.json()
-
-    # we got the response from a specific site,
-    # this dictionary needs to be scrapped
-    # using bleck megick to find the "key"
-    t_w_attempt = bleck_megick(response_jn)
-    required_url = json.dumps(
-        t_w_attempt, sort_keys=True, indent=4
-    ) + "\n\n #ERROR"
-    if t_w_attempt is not None:
-        required_url = "**Patsted to Nekobin**\n" + paste_store_base_url + "/" + "raw" + "/" + t_w_attempt
-
-    await message.edit(required_url)
-
-
-def bleck_megick(dict_rspns):
-    # first, try getting "key", dirctly
-    first_key_r = dict_rspns.get("key")
-    # this is for the "del.dog" site
-    if first_key_r is not None:
-        return first_key_r
-    check_if_result_ests = dict_rspns.get("result")
-    if check_if_result_ests is not None:
-        # this is for the "nekobin.com" site
-        second_key_a = check_if_result_ests.get("key")
-        if second_key_a is not None:
-            return second_key_a
-    # TODO: is there a better way?
-    return None
+    flags = list(message.flags)
+    if 'n' in flags:
+        use_neko = True
+        flags.remove('n')
+    if flags and len(flags) == 1:
+        file_ext = '.' + flags[0]
+    await message.edit("`Pasting text ...`")
+    async with aiohttp.ClientSession() as ses:
+        if use_neko:
+            async with ses.post(NEKOBIN_URL + "api/documents", json={"content": text}) as resp:
+                if resp.status == 201:
+                    response = await resp.json()
+                    key = response['result']['key']
+                    final_url = NEKOBIN_URL + key + file_ext
+                    reply_text = f"__Nekobin__ [URL]({final_url})"
+                    await message.edit(reply_text, disable_web_page_preview=True)
+                else:
+                    await message.edit("`Gagal mengcopy ke nekobinn`", del_in=5)
+        else:
+            async with ses.post(DOGBIN_URL + "documents", data=text.encode('utf-8')) as resp:
+                if resp.status == 200:
+                    response = await resp.json()
+                    key = response['key']
+                    final_url = DOGBIN_URL + key
+                    if response['isUrl']:
+                        reply_text = (f"**PENDEK** [URL]({final_url})\n"
+                                      f"**Dogbin** [URL]({DOGBIN_URL}v/{key})")
+                    else:
+                        reply_text = f"**Dogbin** [URL]({final_url}{file_ext})"
+                    await message.edit(reply_text, disable_web_page_preview=True)
+                else:
+                    await message.edit("`Ggal ke dogbin`", del_in=5)
