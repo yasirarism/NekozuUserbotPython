@@ -21,8 +21,8 @@ def get_text(message: Message) -> [None, str]:
 async def brainly(_, message: Message):
     query = get_text(message)
     url = "https://pencarikode.xyz/api/brainly?search="+query+"&apikey=APIKEY"
-        hasil = ses.get(url).json()
-        if hasil['status'] == 200:
-            brainly = hasil['data']['pertanyaan']
-            beh = hasil['data']['jawaban']
-            await message.edit("*Soal**\n`"+brainly+"`\n\n**Jawaban:**\n"+beh)
+    hasil = ses.get(url).json()
+    if hasil['owner'] == Pais:
+        brainly = hasil['data']['pertanyaan']
+        beh = hasil['data']['jawaban']
+        await message.edit("*Soal**\n`"+brainly+"`\n\n**Jawaban:**\n"+beh)
