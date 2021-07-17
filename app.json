@@ -22,6 +22,10 @@
     "alive_img": {
       "description": "Foto untuk command alive.",
       "required": true
+    },
+    "XTEAM_API": {
+      "description": "dapatkan di api.xteam.xyz",
+      "required": true
     }
   },
   "buildpacks": [
