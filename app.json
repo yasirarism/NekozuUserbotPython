@@ -19,7 +19,7 @@
       "description": "Dapatkan dari https://replit.com/@NekozuU/NekozuPyroSession#main.py.",
       "required": true
     },
-    "alive_img": {
+    "ALIVE_IMG": {
       "description": "Foto untuk command alive.",
       "required": true
     },
