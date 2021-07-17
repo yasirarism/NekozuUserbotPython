@@ -39,6 +39,7 @@ Misc Menu
   .tr (bahasa) -> translate bahasa.
   .ping cek kecepatan bot
   .br -> mencari jawban dibrainly
+  .meme -> random animeme
 """
 
 @xo.on_message(filters.command("mischelp", PREFIX) & filters.me)
