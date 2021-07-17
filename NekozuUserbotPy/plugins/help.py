@@ -38,6 +38,7 @@ Misc Menu
   .paste -> Mengcopy pesan ke nekobin.
   .tr (bahasa) -> translate bahasa.
   .ping cek kecepatan bot
+  .br -> mencari jawban dibrainly
 """
 
 @xo.on_message(filters.command("mischelp", PREFIX) & filters.me)
