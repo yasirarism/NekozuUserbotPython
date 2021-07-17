@@ -3,6 +3,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from NekozuUserbotPy import xo, PREFIX
 
+r = requests.session()
 
 @xo.on_message(filters.command("meme", PREFIX) & filters.me)
 async def meme(_, message: Message):
