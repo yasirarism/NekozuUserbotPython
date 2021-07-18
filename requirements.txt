@@ -5,3 +5,4 @@ aiohttp
 fake-useragent
 python-decouple
 googletrans
+wikipedia
