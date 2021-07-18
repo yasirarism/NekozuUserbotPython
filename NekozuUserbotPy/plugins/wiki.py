@@ -17,7 +17,7 @@ def get_text(message: Message) -> [None, str]:
         return None
 
 @xo.on_message(filters.command("wiki", PREFIX) & filters.me)
-async def wiki(message: Message):
+async def wiki(_, message: Message):
     await message.edit("__Mencari__ ...")
     query = get_text(message)
     flags = message.flags
