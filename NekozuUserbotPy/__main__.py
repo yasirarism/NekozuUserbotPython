@@ -5,11 +5,7 @@ from NekozuUserbotPy.plugins import (
     alive,
     help,
     google,
-    spam,
-    tr,
     pinpon,
-    resi,
-    nekobin,
     brainly,
     fun,
 )
