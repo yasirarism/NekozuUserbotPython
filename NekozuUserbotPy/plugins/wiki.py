@@ -5,7 +5,7 @@ from pyrogram.types import Message
 from NekozuUserbotPy import xo, PREFIX
 
 @xo.on_message(filters.command("wiki", PREFIX) & filters.me)
-async def wiki_pedia(message: Message):
+async def wiki(_, message: Message):
     await message.edit("__Mencari__ ...")
     query = message.filtered_input_str
     flags = message.flags
