@@ -19,7 +19,7 @@ async def telegraph(client, message):
                 and replied.document.file_name.endswith(
                     ('.jpg', '.jpeg', '.png', '.gif', '.mp4'))
                 and replied.document.file_size <= 5242880)):
-        await message.edit("not supported!")
+        await message.edit("Tidak Disupport!")
         return
     download_location = await client.download_media(message=message.reply_to_message,file_name='root/NekozuUserbotPy/')
     await message.edit("`Posting Ke Telegraph...`")
