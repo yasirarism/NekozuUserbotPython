@@ -35,8 +35,7 @@ def mainhelp(_, m):
 misc = f"""
 Misc Menu
   .google -> Mencari Jawaban Digoogle.
-  .paste -> Mengcopy pesan ke nekobin.
-  .tr (bahasa) -> translate bahasa.
+  .telegraph -> memposting gambar gif video ke telegraph
   .ping cek kecepatan bot
   .br -> mencari jawaban dibrainly
   .meme -> random animeme
