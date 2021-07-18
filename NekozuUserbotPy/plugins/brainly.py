@@ -1,3 +1,5 @@
+# Credits NekozuUserbot
+# Created By @nekozu
 import requests
 from pyrogram import filters
 from pyrogram.types import Message
