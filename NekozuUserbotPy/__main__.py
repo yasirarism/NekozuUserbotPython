@@ -8,6 +8,7 @@ from NekozuUserbotPy.plugins import (
     pinpon,
     brainly,
     fun,
+    wiki,
 )
 
 
