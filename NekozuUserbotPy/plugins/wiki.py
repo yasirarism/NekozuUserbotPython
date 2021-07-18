@@ -4,10 +4,22 @@ from pyrogram import filters
 from pyrogram.types import Message
 from NekozuUserbotPy import xo, PREFIX
 
+def get_text(message: Message) -> [None, str]:
+    text_to_return = message.text
+    if message.text is None:
+        return None
+    if " " in text_to_return:
+        try:
+            return message.text.split(None, 1)[1]
+        except IndexError:
+            return None
+    else:
+        return None
+
 @xo.on_message(filters.command("wiki", PREFIX) & filters.me)
 async def wiki(_, message: Message):
     await message.edit("__Mencari__ ...")
-    query = message.filtered_input_str
+    query = get_text(message)
     flags = message.flags
     limit = int(flags.get('-l', 5))
     if message.reply_to_message:
