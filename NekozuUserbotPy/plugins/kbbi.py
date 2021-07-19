@@ -12,4 +12,4 @@ async def kbbi(_, message: Message):
     url = "https://kbbi-api-zhirrr.vercel.app/api/kbbi?text="+query
     hasil = ses.get(url).json()
     kbbi = hasil['arti']
-    await message.edit("**Kata:** `"+query+"`\n__Arti__: "+kbbi)
+    await message.edit('Kata:'+query+'\n__Arti__:'+kbbi)
