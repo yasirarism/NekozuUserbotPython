@@ -24,4 +24,4 @@ async def kbbi(_, message: Message):
     hasil = ses.get(url).json()
     kj = hasil['arti']
     jk = hasil['lema']
-    await message.edit("**Lema**\n`"+jk+"`\n\n**Arti:**\n"+kj)
+    await message.edit("**Lema**\n`"+str([jk])+"`\n\n**Arti:**\n"+str([kj])
