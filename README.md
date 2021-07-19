@@ -33,7 +33,7 @@ cd NekozuUserbotPy
 
 pip3 install -r requirements.txt
 
-and satisfy the values in
+and satisfy the values in .env
 
 python3 -m NekozuUserbotPy
 ```
