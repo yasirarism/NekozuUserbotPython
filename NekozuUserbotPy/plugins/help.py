@@ -39,6 +39,7 @@ Misc Menu
   .ping cek kecepatan bot
   .br -> mencari jawaban dibrainly
   .meme -> random animeme
+  .gitstalk -> fitur stalk akun github
 """
 
 @xo.on_message(filters.command("mischelp", PREFIX) & filters.me)
