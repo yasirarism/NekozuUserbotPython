@@ -20,3 +20,25 @@ Based On [`Pyrogram`](https://github.com/pyrogram)
 [`Pyrogram`](https://github.com/pyrogram)
 
 [MySelf](https://t.me/kurayana)
+
+
+# Local Run
+
+```
+git clone https://github.com/nekozu/NekozuUserbotPython
+
+cd NekozuUserbotPython
+
+cd NekozuUserbotPy
+
+pip3 install -r requirements.txt
+
+and satisfy the values in
+
+python3 -m NekozuUserbotPy
+```
+Done!
+
+# Support
+
+Report Bug Or Need Help Go To [`Nekozu Support`](https://t.me/nekozusupport)
