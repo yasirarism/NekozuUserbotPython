@@ -5,4 +5,4 @@ aiohttp
 fake-useragent
 python-decouple
 telegraph
-pytube
+googlesearch
