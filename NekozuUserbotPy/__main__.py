@@ -9,6 +9,7 @@ from NekozuUserbotPy.plugins import (
     brainly,
     fun,
     telegraph,
+    github,
 )
 
 
