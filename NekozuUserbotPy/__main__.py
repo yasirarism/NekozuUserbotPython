@@ -10,6 +10,7 @@ from NekozuUserbotPy.plugins import (
     fun,
     telegraph,
     github,
+    lyrics,
 )
 
 
