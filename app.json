@@ -20,7 +20,7 @@
       "required": true
     },
     "ALIVE_IMG": {
-      "description": "Foto untuk command alive.",
+      "description": "Foto untuk command alive. Hanya Support Foto",
       "required": true
     },
     "XTEAM_API": {
