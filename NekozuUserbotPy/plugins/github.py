@@ -3,7 +3,6 @@ from pyrogram import filters
 from NekozuUserbotPy import xo, PREFIX
 
 @xo.on_message(filters.command("gitstalk", PREFIX) & filters.me)
-@capture_err
 async def github(_, message):
     if len(message.command) != 2:
         await message.reply_text("/gitstalk Username")
