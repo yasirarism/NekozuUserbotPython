@@ -5,4 +5,3 @@ aiohttp
 fake-useragent
 python-decouple
 telegraph
-googlesearch
