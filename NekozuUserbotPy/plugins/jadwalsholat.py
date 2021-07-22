@@ -1,3 +1,6 @@
+# Credits NekozuUserbot And Nekozu Team
+# Kanged This file? die
+
 import requests
 from pyrogram import filters
 from pyrogram.types import Message
