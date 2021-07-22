@@ -18,7 +18,7 @@ def get_text(message: Message) -> [None, str]:
         return None
 
 @xo.on_message(filters.command("jadwalsholat", PREFIX) & filters.me)
-async def brainly(_, message: Message):
+async def sholat(_, message: Message):
     query = get_text(message)
     url = "https://pencarikode.xyz/api/sholat?kota="+query+"&apikey=APIKEY"
     hasil = ses.get(url).json()
