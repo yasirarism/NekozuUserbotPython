@@ -10,6 +10,7 @@ from NekozuUserbotPy.plugins import (
     github,
     pinpon,
     telegraph,
+    jadwalsholat,
 )
 
 
