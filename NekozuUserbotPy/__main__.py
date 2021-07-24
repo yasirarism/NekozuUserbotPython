@@ -12,6 +12,7 @@ from NekozuUserbotPy.plugins import (
     telegraph,
     jadwalsholat,
     yt,
+    vc,
 )
 
 
