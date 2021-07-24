@@ -37,7 +37,7 @@ async def stream(_, message):
     if type_ == "url":
         if "youtube" not in song_name and "youtu.be" not in song_name:
             return await message.edit("Tidak disupport")
-        await message.editt("Dimulai dari `{}`".format(song_name))
+        await message.edit("Dimulai dari `{}`".format(song_name))
         await play_a_song(pycalls, message, song_name)
     elif type_ == "tg":
         x = await message.edit("Mendownload")
