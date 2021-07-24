@@ -6,7 +6,7 @@ from os import remove
 import youtube_dl
 from youtube_search import YoutubeSearch
 import requests
-from NekozuUserbotPy import xo, PREFIX
+from NekozuUserbotPy import xo, PREFIX, pycalls, pytgcalls
 
 async def play_a_song(pycalls, message, song):
     try:
