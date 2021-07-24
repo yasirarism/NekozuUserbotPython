@@ -1,8 +1,6 @@
 # credits plugins https://github.com/xditya/VCBot
 
 from pyrogram import Client, filters
-from pytgcalls import PyTgCalls
-from pytgcalls_wrapper import Wrapper
 import logging
 from os import remove
 import youtube_dl
