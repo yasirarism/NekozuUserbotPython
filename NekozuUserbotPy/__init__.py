@@ -20,3 +20,6 @@ ALIVE_IMG = config("ALIVE_IMG", default=None)
 XTEAM_API = config("XTEAM_API", default=None)
 
 xo = Client(session, api_id=api_id, api_hash=api_hash)
+
+pytgcalls = PyTgCalls(xo)
+pycalls = Wrapper(pytgcalls, "raw")
