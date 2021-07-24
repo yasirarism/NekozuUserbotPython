@@ -1,7 +1,6 @@
 # credits plugins https://github.com/xditya/VCBot
 
 from pyrogram import Client, filters
-import logging
 from os import remove
 import youtube_dl
 from youtube_search import YoutubeSearch
