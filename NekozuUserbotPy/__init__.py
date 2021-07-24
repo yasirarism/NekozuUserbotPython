@@ -4,6 +4,8 @@ import time
 from pyrogram import Client, errors
 import logging
 from decouple import config
+from pytgcalls import PyTgCalls
+from pytgcalls_wrapper import Wrapper
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
