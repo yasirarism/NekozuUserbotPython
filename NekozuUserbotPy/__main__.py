@@ -11,6 +11,7 @@ from NekozuUserbotPy.plugins import (
     pinpon,
     telegraph,
     jadwalsholat,
+    yt,
 )
 
 
