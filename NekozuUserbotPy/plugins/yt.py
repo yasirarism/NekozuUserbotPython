@@ -1,6 +1,8 @@
 from youtube_search import YoutubeSearch
 import requests
 from pyrogram import filters
+import os
+import youtube_dl
 
 from NekozuUserbotPy import xo, PREFIX
 
