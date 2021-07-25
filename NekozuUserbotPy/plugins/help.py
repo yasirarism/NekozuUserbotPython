@@ -8,6 +8,7 @@ You UserBot Is Already Here
 Ini Adalah Bantuan
   .adminhelp -> tunjukkan bantuan untuk hal-hal admin.
   .mischelp -> menu random
+  .vchelp -> bantuan tentang voice chat
 """
 
 
@@ -40,9 +41,22 @@ Misc Menu
   .br -> mencari jawaban dibrainly
   .meme -> random animeme
   .gitstalk -> fitur stalk akun github
+  .jadwalsholat -> untuk melihatjadwal sholat
+  .song -> mencari lagu
 """
 
 @xo.on_message(filters.command("mischelp", PREFIX) & filters.me)
 def mainhelp(_, m):
     m.edit(misc)
 
+vc = f"""
+Voice Chat
+.play (reply ke auudio atau pakai link)
+.resume
+.pause
+
+"""
+
+@xo.on_message(filters.command("vchelp", PREFIX) & filters.me)
+def mainhelp(_, m):
+    m.edit(vc)
