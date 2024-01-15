@@ -14,12 +14,11 @@ def get_text(message: Message) -> [None, str]:
     text_to_return = message.text
     if message.text is None:
         return None
-    if " " in text_to_return:
-        try:
-            return message.text.split(None, 1)[1]
-        except IndexError:
-            return None
-    else:
+    if " " not in text_to_return:
+        return None
+    try:
+        return message.text.split(None, 1)[1]
+    except IndexError:
         return None
 
 @xo.on_message(filters.command("google", PREFIX) & filters.me)
@@ -34,9 +33,7 @@ async def gsrch(_, message: Message):
     query = urllib.parse.quote_plus(query)
     number_result = 8
     ua = UserAgent()
-    google_url = (
-        "https://www.google.com/search?q=" + query + "&num=" + str(number_result)
-    )
+    google_url = f"https://www.google.com/search?q={query}&num={number_result}"
     response = requests.get(google_url, {"User-Agent": ua.random})
     soup = BeautifulSoup(response.text, "html.parser")
     result_div = soup.find_all("div", attrs={"class": "ZINbbc"})
@@ -66,8 +63,8 @@ async def gsrch(_, message: Message):
     for x in to_remove:
         del titles[x]
         del descriptions[x]
-    msg = ""
-
-    for tt, liek, d in zip(titles, clean_links, descriptions):
-        msg += f"[{tt}]({liek})\n`{d}`\n\n"
+    msg = "".join(
+        f"[{tt}]({liek})\n`{d}`\n\n"
+        for tt, liek, d in zip(titles, clean_links, descriptions)
+    )
     await message.edit("**Pencarian:**\n`" + query + "`\n\n**Hasil:**\n" + msg)

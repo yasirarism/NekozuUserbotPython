@@ -8,7 +8,7 @@ from NekozuUserbotPy import xo, PREFIX
 
 @xo.on_message(filters.command("song", PREFIX) & filters.me)
 def song(_, message):
-    query = "".join(" " + str(i) for i in message.command[1:])
+    query = "".join(f" {str(i)}" for i in message.command[1:])
     print(query)
     m = message.edit("`Mencari...`")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
@@ -39,7 +39,7 @@ def song(_, message):
         m.edit(
             "Tidak ditemukan apapun maaf.."
         )
-        print(str(e))
+        print(e)
         return
     m.edit("Mendownload.")
     try:
