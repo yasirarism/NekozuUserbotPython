@@ -21,16 +21,13 @@ async def pin_message(_, message: Message):
         if me.id in admin_ids:
             # If you replied to a message so that we can pin it.
             if message.reply_to_message:
-                disable_notification = True
-
-                # Let me see if you want to notify everyone. People are gonna hate you for this...
-                if len(message.command) >= 2 and message.command[1] in [
+                disable_notification = len(
+                    message.command
+                ) < 2 or message.command[1] not in [
                     "alert",
                     "notify",
                     "loud",
-                ]:
-                    disable_notification = False
-
+                ]
                 await xo.pin_chat_message(
                     message.chat.id,
                     message.reply_to_message.message_id,

@@ -3,7 +3,7 @@ from pyrogram import filters
 from NekozuUserbotPy import xo, PREFIX
 
 
-mainhelptext = f"""
+mainhelptext = """
 You UserBot Is Already Here
 Ini Adalah Bantuan
   .adminhelp -> tunjukkan bantuan untuk hal-hal admin.
@@ -17,7 +17,7 @@ def mainhelp(_, m):
     m.edit(mainhelptext)
 
 
-adminhelptext = f"""
+adminhelptext = """
 Admin Menu
   .ban -> Blokir pengguna tanpa batas waktu.
   .unban -> Batalkan pemblokiran pengguna.
@@ -33,7 +33,7 @@ Admin Menu
 def mainhelp(_, m):
     m.edit(adminhelptext)
 
-misc = f"""
+misc = """
 Misc Menu
   .google -> Mencari Jawaban Digoogle.
   .telegraph -> memposting gambar gif video ke telegraph
@@ -49,7 +49,7 @@ Misc Menu
 def mainhelp(_, m):
     m.edit(misc)
 
-vc = f"""
+vc = """
 Voice Chat
 .play (reply ke auudio atau pakai link)
 .resume
